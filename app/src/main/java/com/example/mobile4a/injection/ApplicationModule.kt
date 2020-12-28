@@ -5,8 +5,8 @@ import androidx.room.Room
 import com.example.mobile4a.data.local.AppDatabase
 import com.example.mobile4a.data.local.DataBaseDao
 import com.example.mobile4a.data.repository.UserRepository
-import com.example.mobile4a.domain.usercase.CreateUserUseCase
-import com.example.mobile4a.domain.usercase.GetUserUseCase
+import com.example.mobile4a.domain.usecase.CreateUserUseCase
+import com.example.mobile4a.domain.usecase.GetUserUseCase
 import com.example.mobile4a.presentation.main.MainViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
