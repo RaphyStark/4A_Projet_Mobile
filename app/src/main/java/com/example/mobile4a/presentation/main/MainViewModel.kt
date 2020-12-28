@@ -5,11 +5,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mobile4a.domain.entity.User
 import com.example.mobile4a.domain.usercase.CreateUserUseCase
+import com.example.mobile4a.domain.usercase.GetUserUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel(
-    private val createUserUseCase: CreateUserUseCase
-    ): ViewModel() {
+    private val createUserUseCase: CreateUserUseCase,
+    private val getUserUseCase: GetUserUseCase
+): ViewModel() {
 
     val counter: MutableLiveData<Int> = MutableLiveData()
 
@@ -18,8 +21,9 @@ class MainViewModel(
     }
 
     fun onClickedIncrement(emailUser: String) {
-        viewModelScope.launch {
-            createUserUseCase.invoke(User(emailUser))
+        viewModelScope.launch(Dispatchers.IO) {
+            createUserUseCase.invoke(User("test"))
+            val user = getUserUseCase.invoke("test")
         }
     }
 }
