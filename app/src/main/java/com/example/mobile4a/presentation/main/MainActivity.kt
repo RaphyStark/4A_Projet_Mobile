@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
                                 dialog.dismiss()
                             }
                             .show()
-
                     }
                 }
             })
