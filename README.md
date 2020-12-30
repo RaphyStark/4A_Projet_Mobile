@@ -1,6 +1,6 @@
 # 4A_Projet_Mobile
 
-Pour cette application nous avons mis en place une base de données avec Room, la Clean Aarchitecture et l'architecture MVVM.
+Pour cette application nous avons mis en place une base de données avec Room, la Clean Architecture et l'architecture MVVM.
 
 L'application ouvre sur une page de login où l'utilisateur peut entrer un email et un mot de passe.
 
