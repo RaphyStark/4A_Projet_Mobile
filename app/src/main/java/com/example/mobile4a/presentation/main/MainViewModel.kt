@@ -3,6 +3,7 @@ package com.example.mobile4a.presentation.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.mobile4a.domain.entity.User
 import com.example.mobile4a.domain.usecase.CreateUserUseCase
 import com.example.mobile4a.domain.usecase.GetUserUseCase
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +33,10 @@ class MainViewModel(
         }
     }
 
-    fun onClickedCreate(emailUser: String, password: String) {
-
+    fun onClickedCreate(email: String, password: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val user : User = User(email = email, password = password)
+                    createUserUseCase.invoke(user)
+        }
     }
 }
