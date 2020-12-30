@@ -39,5 +39,9 @@ class MainActivity : AppCompatActivity() {
         login_button.setOnClickListener{
             mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
         }
+
+        create_account_button.setOnClickListener{
+            mainViewModel.onClickedCreate(login_edit.text.toString().trim(), password_edit.text.toString())
+        }
     }
 }

@@ -31,4 +31,8 @@ class MainViewModel(
 
         }
     }
+
+    fun onClickedCreate(emailUser: String, password: String) {
+
+    }
 }
