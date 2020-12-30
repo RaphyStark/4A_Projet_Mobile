@@ -13,8 +13,8 @@ class UserRepository(
         dataBaseDao.insert(user.toData())
     }
 
-    fun getUser(email: String): User? {
-        val userLocal = dataBaseDao.findByName(email)
+    fun getUser(email: String, password: String): User? {
+        val userLocal = dataBaseDao.findByName(email, password)
         return userLocal?.toEntity()
     }
 }
